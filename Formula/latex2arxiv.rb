@@ -7,6 +7,8 @@ class Latex2arxiv < Formula
   sha256 "91089414e3c92ea10dd366ebc5b17317c565b72a1dc536c289a994175c21f568"
   license "MIT"
 
+  depends_on "jpeg-turbo"
+  depends_on "libtiff"
   depends_on "libyaml"
   depends_on "python@3.13"
 
@@ -35,6 +37,6 @@ class Latex2arxiv < Formula
   end
 
   test do
-    system bin/"latex2arxiv", "--demo", "--dry-run"
+    assert_match "Summary:", shell_output("#{bin}/latex2arxiv --demo --dry-run")
   end
 end
