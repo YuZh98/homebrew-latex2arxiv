@@ -1,12 +1,13 @@
 class Latex2arxiv < Formula
   include Language::Python::Virtualenv
 
-  desc "The arXiv submission pipeline — CLI, CI, and AI"
+  desc "ArXiv submission pipeline — CLI, CI, and AI"
   homepage "https://github.com/YuZh98/latex2arxiv"
   url "https://files.pythonhosted.org/packages/b5/c4/5e338db4620ba91acc77270510f43de7ef69d2adbc35a505731d63b4d481/latex2arxiv-0.8.0.tar.gz"
   sha256 "91089414e3c92ea10dd366ebc5b17317c565b72a1dc536c289a994175c21f568"
   license "MIT"
 
+  depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "bibtexparser" do
