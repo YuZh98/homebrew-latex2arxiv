@@ -7,10 +7,14 @@ class Latex2arxiv < Formula
   sha256 "65695f7ab8ec9c8099fb879b9f441ca41511ffbf75e82572e1a61b42b81a1002"
   license "MIT"
 
+  depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
   depends_on "libyaml"
+  depends_on "little-cms2"
+  depends_on "openjpeg"
   depends_on "python@3.13"
+  depends_on "webp"
 
   resource "bibtexparser" do
     url "https://files.pythonhosted.org/packages/44/1c/577d3ce406e88f370e80a6ebf76ae52a2866521e0b585e8ec612759894f1/bibtexparser-1.4.4.tar.gz"
