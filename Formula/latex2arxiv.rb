@@ -7,6 +7,7 @@ class Latex2arxiv < Formula
   sha256 "65695f7ab8ec9c8099fb879b9f441ca41511ffbf75e82572e1a61b42b81a1002"
   license "MIT"
 
+  depends_on "pkg-config" => :build
   depends_on "freetype"
   depends_on "jpeg-turbo"
   depends_on "libtiff"
