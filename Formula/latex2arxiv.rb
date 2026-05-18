@@ -3,8 +3,8 @@ class Latex2arxiv < Formula
 
   desc "ArXiv submission pipeline — CLI, CI, and AI"
   homepage "https://github.com/YuZh98/latex2arxiv"
-  url "https://files.pythonhosted.org/packages/4e/8e/598e6aaa6feab61b143c0ca921492f72c9d0889fae654e15b6b311e384d4/latex2arxiv-1.0.0.tar.gz"
-  sha256 "496ab03d380cacdcdde2fd8a190c5a20ddda2e51db965de80e61b43c3aec58a1"
+  url "https://files.pythonhosted.org/packages/38/4e/fddb6fb892b19c0592874ecef547ebf59be85e40828b4c3ca0313fb4a933/latex2arxiv-1.0.1.tar.gz"
+  sha256 "634370205faa30c7502212de205b2764b0593124483418b97ee35e0e6f59919e"
   license "MIT"
 
   depends_on "pkg-config" => :build
