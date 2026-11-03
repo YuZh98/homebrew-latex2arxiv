@@ -7,24 +7,13 @@ class Latex2arxiv < Formula
   sha256 "00ce5c67cc9a45f385aed81a398b604941cbdd71ab59aab89a926b530d529f70"
   license "MIT"
 
-  depends_on "pkg-config" => :build
-  depends_on "freetype"
-  depends_on "jpeg-turbo"
-  depends_on "libtiff"
   depends_on "libyaml"
-  depends_on "little-cms2"
-  depends_on "openjpeg"
-  depends_on "python@3.13"
-  depends_on "webp"
+  depends_on "pillow"
+  depends_on "python@3.14"
 
   resource "bibtexparser" do
     url "https://files.pythonhosted.org/packages/44/1c/577d3ce406e88f370e80a6ebf76ae52a2866521e0b585e8ec612759894f1/bibtexparser-1.4.4.tar.gz"
     sha256 "093b6c824f7a71d3a748867c4057b71f77c55b8dbc07efc993b781771520d8fb"
-  end
-
-  resource "pillow" do
-    url "https://files.pythonhosted.org/packages/8c/21/c2bcdd5906101a30244eaffc1b6e6ce71a31bd0742a01eb89e660ebfac2d/pillow-12.2.0.tar.gz"
-    sha256 "a830b1a40919539d07806aa58e1b114df53ddd43213d9c8b75847eee6c0182b5"
   end
 
   resource "pyparsing" do
@@ -37,11 +26,17 @@ class Latex2arxiv < Formula
     sha256 "d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f"
   end
 
+  resource "regex" do
+    url "https://files.pythonhosted.org/packages/fc/f2/af1da9d3ceed77bfcdce40427d49ba0be94e4fe84245e3bfef68c10e75b6/regex-2026.9.29.tar.gz"
+    sha256 "8b5fcc4771732191b2b7d1dd68d8f0353f47f8d90b6150f6dce58bf1112442cb"
+  end
+
   def install
     virtualenv_install_with_resources
   end
 
   test do
+    system libexec/"bin/python", "-c", "import PIL, regex, yaml, bibtexparser"
     assert_match "Summary:", shell_output("#{bin}/latex2arxiv --demo --dry-run")
   end
 end
